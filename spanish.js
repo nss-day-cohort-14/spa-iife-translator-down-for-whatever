@@ -8,19 +8,12 @@ var Translator = (function(translate){
 		"new":"nuevo",
 		"year":"año"
 	}
-	translate.getSpanish = function(englishWords){
-		var spanishWords=[];
-		for(key in spanishLexicon){
-			englishWords.forEach(function(word){
-				if(word===key){
-					spanishWords.push(spanishLexicon[key]);
-					
-				}
-			});
-		}
-		return spanishWords;
+	translate.getSpanish = function(englishWord){
+		console.log(spanishLexicon[englishWord]);
+		return spanishLexicon[englishWord]
 
 	}
 	return translate;
 
 })(Translator);
+
