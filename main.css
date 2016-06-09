@@ -4,9 +4,15 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: url(http://thumb9.shutterstock.com/display_pic_with_logo/58026/118412092/stock-photo-welcome-phrase-in-different-languages-words-cloud-concept-118412092.jpg);
-  background-repeat: repeat-y;
+}
+
+.background {
+  background-image: url(http://image.shutterstock.com/z/stock-vector-word-hello-in-different-languages-presentation-background-368567210.jpg);
+  background-repeat: no-repeat;
+  margin: auto;
+  padding: 20% 0;
   background-size: 80%;
+  /*height: 100%;*/
   background-position: center;
 }
 
@@ -17,11 +23,11 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 5rem auto;
+  margin: auto;
   border: 5px solid tomato;
   border-radius: 15%;
   box-shadow: 1em 1em 1em 0 rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  padding: 5rem 5rem;
   background: rgba(150, 150, 150, 0.8);
 }
 
