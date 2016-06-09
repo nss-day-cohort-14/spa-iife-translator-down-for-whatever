@@ -26,19 +26,25 @@ function handleTranslation(text){
 
 	var translatedArray=[];
 	var textArray=text.toLowerCase().split(" ");
-	if(languageVal==="spanish"){
+	if(languageVal===""){
+		alert("Select a language");
+	}
+	if(text===""){
+		alert("Type a string");
+	}
+else if(languageVal==="spanish"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getSpanish(word));
 		//voiceSynth(translatedArray);
 	});
 }
-if(languageVal==="french"){
+else if(languageVal==="french"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getFrench(word));
 		//voiceSynth(translatedArray);
 	});
 }
-if(languageVal==="polish"){
+else if(languageVal==="polish"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getPolish(word));
 	});
