@@ -5,10 +5,12 @@ var select = document.getElementById("language");
 var container = document.getElementById("container");
 var languageVal="";
 
+//Gets the language chosen
 select.addEventListener("change", function(){
 	languageVal=select.value;	
 });
 
+//Passes text to be translated
 button.addEventListener("click", function(){
 	handleTranslation(input.value);
 });
@@ -30,34 +32,41 @@ function voiceSynth(toSpeak) {
 
 function handleTranslation(text){
 
-	var translatedArray=[];
-	var textArray=text.toLowerCase().split(" ");
-	if(languageVal===""){
+	var translatedArray=[]; //Where the translated text will be stored
+	var textArray=text.toLowerCase().split(" "); //sets text to lower case
+	if(languageVal===""){ 
+		//alerts if no language has been selected
 		alert("Select a language");
 	}
 	if(text===""){
+		//alerts if there is nothing typed in the input
 		alert("Type a string");
 	}
-else if(languageVal==="spanish"){
-	textArray.forEach(function(word){
+	else if(languageVal==="spanish"){
+		//adds translated spanish word to translatedArray
+		textArray.forEach(function(word){
 		translatedArray.push(Translator.getSpanish(word));
 	});
 }
-else if(languageVal==="french"){
-	textArray.forEach(function(word){
+	else if(languageVal==="french"){
+		//adds translated french word to translatedArray
+		textArray.forEach(function(word){
 		translatedArray.push(Translator.getFrench(word));
 	});
 }
-else if(languageVal==="polish"){
-	textArray.forEach(function(word){
+	else if(languageVal==="polish"){
+		//adds translated polish word to translatedArray
+		textArray.forEach(function(word){
 		translatedArray.push(Translator.getPolish(word));
 	});
 }
 	var translatedText = translatedArray.join(" ");
+	//turns translatedArray into a string
 	writeToDOM(translatedText);
 
 }
 function writeToDOM(translated){
+	//writes text to DOM and reads it aloud
 	container.innerHTML = translated;
 	voiceSynth(translated);
 
