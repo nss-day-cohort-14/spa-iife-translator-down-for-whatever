@@ -1,5 +1,10 @@
 //Ititialize IIFE Translator
+
+
+
+
 var Translator = (function(OldTranslator) {
+
 
     var frenchLexicon = {
       "merry":"Joyeux",
@@ -16,4 +21,5 @@ var Translator = (function(OldTranslator) {
 
     return OldTranslator;
 
-})(Translator);
+})(Translator || {});
+

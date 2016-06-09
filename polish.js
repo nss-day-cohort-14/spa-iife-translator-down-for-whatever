@@ -18,6 +18,6 @@ var Translator = ((originalTranslator) => {
 
 	return originalTranslator
 
-})(Translator);
+})(Translator || {});
 
 

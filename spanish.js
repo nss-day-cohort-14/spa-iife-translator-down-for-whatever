@@ -1,3 +1,4 @@
+
 var Translator = (function(translate){
 		var spanishLexicon={
 		"merry": "feliz",
@@ -14,5 +15,5 @@ var Translator = (function(translate){
 	}
 	return translate;
 
-})(Translator);
+})(Translator || {});
 
