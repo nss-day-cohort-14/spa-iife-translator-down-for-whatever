@@ -15,6 +15,15 @@ button.addEventListener("click", function(){
 	handleTranslation(input.value);
 });
 
+function voiceSynth(toSpeak) {
+	var synth = window.speechSynthesis;
+	var utterThis = new SpeechSynthesisUtterance(toSpeak);
+	var voices = [];
+	voices = window.speechSynthesis.getVoices();
+	utterThis.lang = 'ar';
+	synth.speak(utterThis);
+}
+
 function handleTranslation(text){
 
 	var translatedArray=[];
@@ -22,19 +31,18 @@ function handleTranslation(text){
 	if(languageVal==="spanish"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getSpanish(word));
-		
+		//voiceSynth(translatedArray);
 	});
 }
 if(languageVal==="french"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getFrench(word));
-		
+		//voiceSynth(translatedArray);
 	});
 }
 if(languageVal==="polish"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getPolish(word));
-		
 	});
 }
 	var translatedText = translatedArray.join(" ");
@@ -43,6 +51,7 @@ if(languageVal==="polish"){
 }
 function writeToDOM(translated){
 	container.innerHTML = translated;
+	voiceSynth(translated);
 
 }
 })();
