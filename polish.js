@@ -2,7 +2,7 @@
 var Translator = ((originalTranslator) => {
 
 
-	var toPolish = {
+	var polishLexicon = {
 		"merry": "wesolych",
 		"christmas": "swiat",
 		"and": "i",
@@ -12,8 +12,9 @@ var Translator = ((originalTranslator) => {
 	}
 
 	// Translation logic to be covered in DOM
-	originalTranslator.getPolish = (english) => {
-		return toPolish[english];
+	originalTranslator.getPolish = (englishWord) => {
+		// Accessing key:value pair with bracket notation
+		return polishLexicon[englishWord];
 	}
 
 	return originalTranslator
