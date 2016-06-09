@@ -18,7 +18,13 @@ function voiceSynth(toSpeak) {
 	var utterThis = new SpeechSynthesisUtterance(toSpeak);
 	var voices = [];
 	voices = window.speechSynthesis.getVoices();
-	utterThis.lang = 'ar';
+
+	utterThis.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Bad News'; })[0];
+	speechSynthesis.getVoices().forEach(function(voice) {
+  console.log(voice.name, voice.default ? '(default)' :'');
+	});
+	utterThis.rate = 1;
+	utterThis.lang = 'en-US';
 	synth.speak(utterThis);
 }
 
@@ -35,13 +41,11 @@ function handleTranslation(text){
 else if(languageVal==="spanish"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getSpanish(word));
-		//voiceSynth(translatedArray);
 	});
 }
 else if(languageVal==="french"){
 	textArray.forEach(function(word){
 		translatedArray.push(Translator.getFrench(word));
-		//voiceSynth(translatedArray);
 	});
 }
 else if(languageVal==="polish"){
