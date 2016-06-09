@@ -9,7 +9,6 @@ var Translator = (function(translate){
 		"year":"año"
 	}
 	translate.getSpanish = function(englishWord){
-		console.log(spanishLexicon[englishWord]);
 		return spanishLexicon[englishWord]
 
 	}

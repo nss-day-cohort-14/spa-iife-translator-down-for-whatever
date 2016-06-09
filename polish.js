@@ -1,4 +1,4 @@
-console.log("Hello Nurse");
+
 var Translator = ((originalTranslator) => {
 
 
