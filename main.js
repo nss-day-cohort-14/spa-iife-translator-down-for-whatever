@@ -1,8 +1,9 @@
-//Ititialize IIFE Translator
+//Ititialize IIFE Translator 
 var Translator = (function() {
 
 
-  return { }
+  return Translator;
 
 
-})();
+})(Translator || {});
+

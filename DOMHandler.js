@@ -6,9 +6,7 @@ var container = document.getElementById("container");
 var languageVal="";
 
 select.addEventListener("change", function(){
-	languageVal=select.value;
-	
-
+	languageVal=select.value;	
 });
 
 button.addEventListener("click", function(){
@@ -45,4 +43,5 @@ function writeToDOM(translated){
 	container.innerHTML = translated;
 
 }
+
 })();
